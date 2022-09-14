@@ -30,6 +30,8 @@
     <script src="source/render.min.js"></script>
     <script src="source/mobile.js"></script>
     <script src="source/mobile_002.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
     <style type="text/css" media="all" id="infoplus_view_5324_0_style"></style>
     <link type="text/css" media="all" rel="stylesheet" id="infoplus_view_5324_0_cached_link"
           href="source/f.css">
@@ -630,10 +632,10 @@
                                                                  class="infoplus_control infoplus_imageControl"
                                                                  id="image_3c013948-b3c2-48a6-b8fc-76fdb9c15132"><a
                                                                     data-lightbox="8e742830-c50f-4f86-8920-672bd3abc7e7"
-                                                                    href="https://ehall.jsnu.edu.cn/file/28367370-f06f-4f09-b33e-25da6e457540"><img
+                                                                    href="https://ehall.jsnu.edu.cn/file/28367370-f06f-4f09-b33e-25da6e457540"><div
                                                                     class="infoplus_imageControl_image"
-                                                                    style="width: 127px; height: 132px; cursor: pointer;"
-                                                                    src="source/QJSQLC_qrcode2961.png"></a><input
+                                                                    id="qrcode_box"
+                                                                    style="width: 127px; height: 132px; cursor: pointer;"></div></a><input
                                                                     type="hidden" id="V1_CTRL108" name="fieldEWM"
                                                                     value="{&quot;id&quot;:&quot;28367370-f06f-4f09-b33e-25da6e457540&quot;,&quot;name&quot;:&quot;QJSQLC_qrcode2961.png&quot;,&quot;size&quot;:3631,&quot;uri&quot;:&quot;https://ehall.jsnu.edu.cn/file/28367370-f06f-4f09-b33e-25da6e457540&quot;,&quot;mime&quot;:&quot;application/octet-stream&quot;}">
                                                             </div>
@@ -915,6 +917,15 @@
         document.getElementById('l_reason').innerText = l_reason;
         document.getElementById('this_date1').innerText = YY + '-' + MM + '-' + DD;
         document.getElementById('this_date2').innerText = YY + '-' + MM + '-' + DD;
+        var text = "1." + c_number + "_" + name;
+        new QRCode(document.getElementById('qrcode_box'), {
+            text: `${text}`,
+            width: 127,
+            height: 127,
+            colorDark: '#006000',
+            colorLight: '#ffffff',
+            correctLevel : QRCode.CorrectLevel.H
+        });
     }
 </script>
 <div id="div_invoice"></div>
